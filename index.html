@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="sky">
+
+        <div class="moon"></div>
+
+        <div class="star star1"></div>
+        <div class="star star2"></div>
+        <div class="star star3"></div>
+        <div class="star star4"></div>
+        <div class="star star5"></div>
+
+        <div class="hero">
+            <h1>Drift</h1>
+            <p>Some memories are worth waiting for.</p>
+            <button id="openModal">Create Capsule</button>
+        </div>
+    </div>  
+
+        <section class="capsules">
+            <h2>My Capsules</h2>
+
+            <div id="capsuleList">
+                <p> No capsules yet.</p>
+            </div>
+        </section>
+         
+    <div class="modal" id="modal">
+        <div class="modal-box">
+            <span class="close">&times;</span>
+
+            <h2>Create Capsule</h2>
+
+            <input type="text" id="title" placeholder="Capsule Title">
+
+            <textarea id="letter" placeholder="Write your letter...."></textarea>
+
+            <input type="date" id="unlockDate">
+            <button id="saveBtn">Save Capsule</button>
+        </div>
+    
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
