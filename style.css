@@ -193,9 +193,12 @@ body {
 }
 
 .capsules {
-    background: #f5f5f5;
-    padding: 60px 20px;
-    min-height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        #021B3A,
+        #01101f
+    );
+    padding: 80px 20px;
 }
 
 .capsules h2 {
@@ -214,4 +217,88 @@ body {
 
 .capsule-card h3 {
     margin-top: 0;
+}
+
+.date-note {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    margin-top: 6px;
+    color: #666766;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: block;
+}
+
+input [type="date"] {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    width: 100%;
+    font-size: 16px;
+}
+
+.toast {
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: #04595E;
+    color: white;
+
+    padding: 15px 25px;
+    
+    border-radius: 12px;
+    opacity: 0;
+
+    transition: 0.4s;
+    pointer-events: none;
+    font-size: 16px;
+    
+}
+
+.capsule-card{
+    background: rgba (255, 255, 255, 0, 0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid
+rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 25px;
+    color: white;
+    margin: 20px auto;
+    max-width: 600px;
+    transition: 3s;
+}
+
+.capsule-card:hover{
+    transform: translate(-6px);
+    box-shadow: 0 15px 35px
+rgba(0, 0, 0, 0.3);
+}
+
+.capsule header{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.capsule-header h3{
+    margin:0;
+}
+
+.capsule-date{
+    color: #c9dfff;
+    font-size: 15px;
+    margin-bottom: 18px;
+
+}
+.capsule-letter{
+    line-height:1.8;
+    color: #f2f2f2
 }

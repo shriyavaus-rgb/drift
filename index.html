@@ -44,15 +44,20 @@ content="width=device-width, initial-scale=1.0">
 
             <h2>Create Capsule</h2>
 
-            <input type="text" id="title" placeholder="Capsule Title">
+            <input type="text" id="title" placeholder="Capsule Title" required>
 
-            <textarea id="letter" placeholder="Write your letter...."></textarea>
+            <textarea id="letter" placeholder="Write your letter...." required></textarea>
 
-            <input type="date" id="unlockDate">
+            <p class="date-note">Choose an unlock date.</p>
+            <input type="date" id="unlockDate" required>
             <button id="saveBtn">Save Capsule</button>
         </div>
     
     </div>
+
+    <div id="toast" class="toast">
+    Your Capsule has been sealed!
+</div>
     <script src="script.js"></script>
 
 </body>
