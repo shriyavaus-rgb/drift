@@ -14,6 +14,12 @@ function resetForm() {
     modal.style.display = "none";
 }
 
+function generateShareLink(capsule) {
+    const data = JSON.stringify(capsule);
+    const encoded = btoa(encodeURIComponent(data));
+    return `${window.location.origin}${window.location.pathname}?capsule=${encoded}`;
+}
+
 openBtn.addEventListener("click", () => {
     modal.style.display = "flex";
 });
@@ -52,9 +58,18 @@ localStorage.setItem("capsules", JSON.stringify(capsules));
 resetForm();
 displayCapsules();
 
+const shareLink = generateShareLink(capsule);
+navigator.clipboard.writeText(shareLink).then(() => {
+    console.log("Clipboard copy succeeded");
+}).catch((err) => {
+    console.log("Clipboard copy failed;", err);
+});
+
+toast.textContent = "Capsule sealed! Share link copied to clipboard.";
 toast.classList.add("show");
 setTimeout(() => {
     toast.classList.remove("show");
+    toast.textContent = "Your Capsule has been sealed!";
 },3000);
 });
 
@@ -67,8 +82,8 @@ function displayCapsules() {
     }
 let html = "";
 
-saved.forEach(capsule => {
-    const todayStr = new Date().toISOString().split("T") [0];
+saved.forEach((capsule, index) => {
+    const todayStr = new Date().toISOString().split("T")[0];
     let message;
     let dateLine;
 
@@ -87,12 +102,23 @@ saved.forEach(capsule => {
         </div>
         ${dateLine}
         ${message}
+        <button class="delete-btn" data-index="${index}">Delete</button>
     </div>
     `;
 });
 
 document.getElementById("capsuleList").innerHTML = html;
-
+//Delete button click listener
+const deleteButtons = document.querySelectorAll(".delete-btn");
+deleteButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const indexToDelete = btn.dataset.index;
+        let capsules = JSON.parse(localStorage.getItem("capsules")) || [];
+        capsules.splice(indexToDelete, 1);
+        localStorage.setItem("capsules", JSON.stringify(capsules));
+        displayCapsules();
+    });
+});
 }
 
 displayCapsules();

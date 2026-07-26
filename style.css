@@ -312,3 +312,17 @@ input[type="date"] {
     margin-top: 15px;
 }
 
+.delete-btn {
+    margin-top: 12px;
+    padding: 6px 14px;
+    background: rgba(255, 80, 80, 0.15);
+    color: #ff8080;
+    border: 1px solid rgba(255, 80, 80, 0.4);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.delete-btn hover {
+    background: rgba(255, 80, 80, 0.3);
+}
