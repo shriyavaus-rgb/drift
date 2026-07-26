@@ -30,7 +30,7 @@ This was intentional — I wanted to deeply understand the fundamentals of the D
 
 ## How to use it
 
-1. Open the [live site](YOUR_LIVE_LINK_HERE)
+1. Open the [live site](https://shriyavaus-rgb.github.io/drift/)
 2. Click **Create Capsule**
 3. Write a title and your letter, choose an unlock date
 4. Click **Save Capsule** — it's sealed!
